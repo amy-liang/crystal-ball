@@ -15,14 +15,14 @@ class CrystalBallTabs extends React.Component<IProps> {
         const { currentTabIndex, setTabIndex } = this.props;
 
         return (
-            <div>
-            <div className={currentTabIndex === 0 ? 'tab' : 'active-tab'} onClick={() => setTabIndex(0)}>
+            <div className="tab-container">
+            <div className={currentTabIndex === 0 ? 'tab active-tab' : 'tab'} onClick={() => setTabIndex(0)}>
                 Get Minimum
             </div>
-                <div className={currentTabIndex === 1 ? 'tab' : 'active-tab'} onClick={() => setTabIndex(1)}>
+                <div className={currentTabIndex === 1 ? 'tab active-tab' : 'tab'} onClick={() => setTabIndex(1)}>
                     Get Predicted
                 </div>
-                <div className={currentTabIndex === 2 ? 'tab' : 'active-tab'} onClick={() => setTabIndex(2)}>
+                <div className={currentTabIndex === 2 ? 'tab active-tab' : 'tab'} onClick={() => setTabIndex(2)}>
                     Get Received
                 </div>
             </div>

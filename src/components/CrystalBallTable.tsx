@@ -22,14 +22,19 @@ class CrystalBallTable extends React.Component {
 
     render() {
         return (
-            <div>
+            <div className="container">
                 <CrystalBallTabs
                     currentTabIndex={this.currentTabIndex}
                     setTabIndex={this.setTabIndex}
                 />
+                <div className="inner-container">
                 {this.currentTabIndex === 0 && <GetMinimum/>}
                 {this.currentTabIndex === 1 && <GetPredicted/>}
                 {this.currentTabIndex === 2 && <GetReceived/>}
+                </div>
+                <div className="calculate-button">
+                    Calculate
+                </div>
             </div>
         );
     }

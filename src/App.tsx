@@ -6,7 +6,7 @@ class App extends React.Component {
   render() {
     return (
       <div className="app-root">
-        <h1 className="app-header">Crystal Ball</h1>
+        <h1 className="header">Crystal Ball</h1>
         <CrystalBallTable/>
       </div>
     );

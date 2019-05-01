@@ -1,16 +1,60 @@
 .app-root {
   height: 100vh;
   width: 100vw;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
-.app-header {
+.header {
   color: white;
+  font-weight: 100;
+  letter-spacing: 1.5px;
+  padding: 32px 0 16px;
+}
+
+.container {
+  max-width: 1000px;
+  border-radius: 12px;
+}
+
+.tab-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
 }
 
 .tab {
-  background-color: red;
+  padding: 24px 32px;
+  background-color: #C6B1DD;
+  color: white;
+  letter-spacing: 0.5px;
+  cursor: pointer;
 }
 
 .active-tab {
-  background-color: blue;
+  background-color: #8F76B7;
+}
+
+.inner-container {
+  background-color: #E6DAF2;
+  padding: 12px;
+}
+
+.calculate-button {
+  width: 100%;
+  height: 60px;
+  background-color: #2E2E47;
+  color: white;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  cursor: pointer;
+}
+
+.calculate-button:hover {
+  background-color: #252647;
 }
