@@ -28,7 +28,7 @@ class CrystalBallTable extends React.Component {
                     setTabIndex={this.setTabIndex}
                 />
                 <div className="inner-container">
-                {this.currentTabIndex === 0 && <GetMinimum/>}
+                {this.currentTabIndex === 0 && <GetMinimum crystalBallModel={this.crystalBallModel}/>}
                 {this.currentTabIndex === 1 && <GetPredicted/>}
                 {this.currentTabIndex === 2 && <GetReceived/>}
                 </div>
