@@ -60,6 +60,17 @@ input {
   align-items: center;
 }
 
+.error-message {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  padding-top: 12px;
+  font-weight: 100;
+  color: #e83c3c;
+  font-size: 14px;
+}
+
 .calculate-button {
   width: 100%;
   height: 60px;
@@ -76,4 +87,14 @@ input {
 
 .calculate-button:hover {
   background-color: #252647;
+}
+
+.result-text {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  padding-top: 32px;
+  font-size: 48px;
+  color: white;
 }

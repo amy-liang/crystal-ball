@@ -1,6 +1,6 @@
-import * as React from 'react';
-import '../App.css';
-import {action, observable} from "mobx";
+import * as React from "react";
+import "../App.css";
+import { observable } from "mobx";
 import { observer } from "mobx-react";
 import CrystalBallTabs from "./CrystalBallTabs";
 import GetMinimum from "./GetMinimum";
@@ -10,34 +10,45 @@ import CrystalBallModel from "./CrystalBallModel";
 
 @observer
 class CrystalBallTable extends React.Component {
-    @observable
-    currentTabIndex: number = 0;
+  @observable
+  crystalBallModel: CrystalBallModel = new CrystalBallModel();
 
-    crystalBallModel: CrystalBallModel = new CrystalBallModel();
+  render() {
+    const { currentTabIndex, setTabIndex } = this.crystalBallModel;
 
-    @action
-    setTabIndex = (index: number) => {
-        this.currentTabIndex = index;
-    };
-
-    render() {
-        return (
-            <div className="container">
-                <CrystalBallTabs
-                    currentTabIndex={this.currentTabIndex}
-                    setTabIndex={this.setTabIndex}
-                />
-                <div className="inner-container">
-                {this.currentTabIndex === 0 && <GetMinimum crystalBallModel={this.crystalBallModel}/>}
-                {this.currentTabIndex === 1 && <GetPredicted/>}
-                {this.currentTabIndex === 2 && <GetReceived/>}
-                </div>
-                <div className="calculate-button">
-                    Calculate
-                </div>
-            </div>
-        );
-    }
+    return (
+      <div>
+        <div className="container">
+          <CrystalBallTabs
+            currentTabIndex={currentTabIndex}
+            setTabIndex={setTabIndex}
+          />
+          <div className="inner-container">
+            {currentTabIndex === 0 && (
+              <GetMinimum crystalBallModel={this.crystalBallModel} />
+            )}
+            {currentTabIndex === 1 && <GetPredicted crystalBallModel={this.crystalBallModel} />}
+            {currentTabIndex === 2 && <GetReceived crystalBallModel={this.crystalBallModel} />}
+            {this.crystalBallModel.errorMessage && (
+              <div className="error-message">
+                {this.crystalBallModel.errorMessage}
+              </div>
+            )}
+          </div>
+          <div
+            className="calculate-button"
+            role="button"
+            onClick={() => this.crystalBallModel.onCalculateClick()}
+          >
+            Calculate
+          </div>
+        </div>
+        <div className="result-text">
+          {this.crystalBallModel.result}
+        </div>
+      </div>
+    );
+  }
 }
 
 export default CrystalBallTable;
